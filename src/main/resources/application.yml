@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: "jdbc:mysql://localhost:3306/delivery_store?useSSL=false&allowPublicKeyRetrieval=true"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: app
+    hikari:
+      password: app123!@#
+    batch:
+      url: "jdbc:mysql://localhost:3306/delivery_batch?useSSL=false&allowPublicKeyRetrieval=true"
+      username: batch
+      password: batch123!@#
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    open-in-view: false
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
+  batch:
+    job:
+      name: \${job.name:NONE}
+server:
+  role-name: delivery-catalog-batch
+
+logging:
+  level:
+    root: info
+
+
